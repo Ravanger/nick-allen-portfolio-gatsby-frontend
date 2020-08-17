@@ -8,11 +8,16 @@ const DivContact = styled.div`
   float: right;
 `
 
+const SpanContact = styled.span`
+  font-family: Colus, sans-serif;
+  font-size: 2em;
+`
+
 const Contact_Mini = (): JSX.Element => {
   return (
     <DivContact>
-      <span>Contact</span>
-      <Socials_Icons />
+      <SpanContact>Contact</SpanContact>
+      <Socials_Icons fontsize="2em" />
     </DivContact>
   )
 }

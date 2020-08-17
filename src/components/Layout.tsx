@@ -6,6 +6,12 @@ import Header from '@components/Header'
 const globalStyles = css`
   body {
     background-color: #fff2e4;
+    color: #2f373e;
+    padding: 1em;
+  }
+
+  a {
+    color: #2f373e;
   }
 `
 

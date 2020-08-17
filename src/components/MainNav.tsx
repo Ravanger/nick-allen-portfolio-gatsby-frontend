@@ -7,10 +7,21 @@ const StyledNav = styled.nav`
 
   > ul > li {
     display: inline-block;
+
+    + li {
+      margin-left: 1em;
+    }
+
+    > a {
+      font-family: Colus, serif;
+      font-size: 2em;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
   }
 `
 
-const MainNav = (): JSX.Element => {
+const MainNav: React.FC = () => {
   return (
     <StyledNav>
       <ul>

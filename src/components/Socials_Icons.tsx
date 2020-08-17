@@ -6,30 +6,38 @@ import { Link } from 'gatsby'
 const UlSocialsIcons = styled.ul`
   > li {
     display: inline-block;
+
+    + li {
+      margin-left: 0.5em;
+    }
   }
 `
 
-const Socials_Icons = () => {
+type SocialsIconsTypes = {
+  fontsize?: string | undefined
+}
+
+const Socials_Icons: React.FC<SocialsIconsTypes> = props => {
   return (
     <UlSocialsIcons>
       <li>
         <Link to="/">
-          <FaTwitter />
+          <FaTwitter fontSize={props.fontsize} />
         </Link>
       </li>
       <li>
         <Link to="/">
-          <FaInstagram />
+          <FaInstagram fontSize={props.fontsize} />
         </Link>
       </li>
       <li>
         <Link to="/">
-          <FaDribbble />
+          <FaDribbble fontSize={props.fontsize} />
         </Link>
       </li>
       <li>
         <Link to="/">
-          <FaBehance />
+          <FaBehance fontSize={props.fontsize} />
         </Link>
       </li>
     </UlSocialsIcons>

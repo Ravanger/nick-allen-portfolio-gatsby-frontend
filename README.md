@@ -7,4 +7,5 @@
   Nick Allen home page
 </h1>
 
-Note: You will need to get your own copy of the Colus font and drop it into src/static/fonts/Colus/Colus-Regular.\*
+Note: You will need to get your own copy of the Colus font and drop it into src/static/fonts/Colus/colus-regular-webfont.\*
+and import in your own css file.

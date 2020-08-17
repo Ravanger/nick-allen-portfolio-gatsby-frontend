@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default-extra",
+  "name": "nick_allen_portfolio_frontend",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby with extra plugins",
+  "description": "Nick Allen's portfolio home page",
   "version": "0.1.0",
-  "author": "Gatsby",
+  "author": "Boris Rossovsky",
   "dependencies": {
     "@emotion/core": "^10.0.28",
     "@emotion/styled": "^10.0.27",
@@ -29,13 +29,16 @@
     "react-icons": "^3.10.0"
   },
   "devDependencies": {
+    "@hot-loader/react-dom": "^16.13.0",
     "gatsby-alias-imports": "^1.0.4",
     "prettier": "2.0.5",
-    "typescript": "^3.9.7",
-    "@hot-loader/react-dom": "^16.13.0"
+    "typescript": "^3.9.7"
   },
   "keywords": [
-    "gatsby"
+    "gatsby",
+    "portfolio",
+    "homepage",
+    "website"
   ],
   "license": "0BSD",
   "scripts": {
@@ -49,9 +52,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Ravanger/gatsby-starter-default"
+    "url": "https://github.com/Ravanger/nick_allen_portfolio_frontend"
   },
   "bugs": {
-    "url": "https://github.com/Ravanger/gatsby-starter-default/issues"
+    "url": "https://github.com/Ravanger/nick_allen_portfolio_frontend/issues"
   }
 }

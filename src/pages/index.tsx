@@ -6,7 +6,6 @@ import SEO from '@components/SEO'
 const IndexPage: React.FC = () => (
   <Layout>
     <SEO title="Home" />
-    <h1>Welcome</h1>
   </Layout>
 )
 

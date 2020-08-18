@@ -1,18 +1,25 @@
 import React from 'react'
 import { Global, css } from '@emotion/core'
+import styled from '@emotion/styled'
 
 import Header from '@components/Header'
 
 const globalStyles = css`
   body {
     background-color: #fff2e4;
+    font-family: Roboto, sans-serif;
     color: #2f373e;
-    padding: 2rem;
+    overflow: hidden;
   }
 
   a {
     color: #2f373e;
+    text-decoration: none;
   }
+`
+
+const MainContent = styled.main`
+  padding: 2rem;
 `
 
 type PropTypes = {
@@ -24,7 +31,7 @@ const Layout: React.FC<PropTypes> = ({ children }) => {
     <>
       <Global styles={globalStyles} />
       <Header />
-      <main>{children}</main>
+      <MainContent>{children}</MainContent>
     </>
   )
 }

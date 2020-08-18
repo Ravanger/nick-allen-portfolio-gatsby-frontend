@@ -13,7 +13,6 @@ const StyledNav = styled.nav`
       > a {
         font-family: Colus, serif;
         font-size: 2em;
-        text-decoration: none;
         text-transform: uppercase;
       }
     }

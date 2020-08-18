@@ -6,7 +6,7 @@ import { Link } from 'gatsby'
 const UlSocialsIcons = styled.ul`
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
 `
 
 type SocialsIconsTypes = {

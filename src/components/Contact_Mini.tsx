@@ -13,6 +13,7 @@ const DivContact = styled.div`
     font-family: Colus, sans-serif;
     font-size: 2em;
     grid-area: 1 / 1 / 2 / 5;
+    margin-bottom: 0.2em;
   }
 `
 
@@ -20,7 +21,7 @@ const Contact_Mini: React.FC = () => {
   return (
     <DivContact>
       <span>Contact</span>
-      <Socials_Icons fontsize="2em" />
+      <Socials_Icons fontsize="1.5em" />
     </DivContact>
   )
 }

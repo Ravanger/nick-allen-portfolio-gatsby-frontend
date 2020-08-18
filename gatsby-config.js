@@ -20,6 +20,7 @@ module.exports = {
         aliases: {
           '@components': 'src/components',
           '@pages': 'src/pages',
+          '@styles': 'src/static/style',
         },
         rootFolder: 'src',
       },

@@ -4,12 +4,13 @@ import styled from '@emotion/styled'
 
 import Layout from '@components/Layout'
 import SEO from '@components/SEO'
+import '@styles/colours.css'
 
 const DivBorder = styled.div`
   height: calc(100% - 4rem);
   width: calc(100% - 4rem);
   position: absolute;
-  border: solid 2px #f39836;
+  border: solid 2px var(--main-accent-color);
   border-top: none;
 `
 
@@ -39,8 +40,8 @@ const DivIntro = styled.div`
   > a {
     font-family: Colus, serif;
     text-transform: uppercase;
-    background-color: #2f373e;
-    color: white;
+    background-color: var(--main-text-color);
+    color: var(--main-bg-color);
     padding: 1em;
   }
 `
@@ -48,7 +49,7 @@ const DivIntro = styled.div`
 const SpanRotated = styled.span`
   display: block;
   font-size: 2rem;
-  background-color: #fff2e4;
+  background-color: var(--main-bg-color);
   position: absolute;
   top: 50%;
   text-align: center;
@@ -73,7 +74,7 @@ const IndexPage: React.FC = () => (
     <SEO title="Home" />
     <DivBorder />
     <SpanLeft>Illustrations</SpanLeft>
-    <SpanRight>UI/UX</SpanRight>
+    <SpanRight>UX/UI</SpanRight>
     <DivIntro>
       <h1>Hi, I'm Nick</h1>
       <p>

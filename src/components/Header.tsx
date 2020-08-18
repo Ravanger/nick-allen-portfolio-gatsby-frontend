@@ -3,6 +3,7 @@ import styled from '@emotion/styled'
 
 import MainNav from '@components/MainNav'
 import Contact_Mini from '@components/Contact_Mini'
+import '@styles/colours.css'
 
 const HeaderWrapper = styled.header`
   display: flex;
@@ -11,9 +12,9 @@ const HeaderWrapper = styled.header`
   margin: 0 2rem;
   padding: 2rem;
   align-items: center;
-  border-bottom: solid 2px #f39836;
+  border-bottom: solid 2px var(--main-accent-color);
   padding-bottom: 1rem;
-  background-color: #fff2e4;
+  background-color: var(--main-bg-color);
   z-index: 10;
 `
 

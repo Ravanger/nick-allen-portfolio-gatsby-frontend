@@ -1,11 +1,13 @@
+@import 'colours.css';
+
 body {
-  background-color: #fff2e4;
+  background-color: var(--main-bg-color);
   font-family: Roboto, sans-serif;
-  color: #2f373e;
+  color: var(--main-text-color);
   overflow: hidden;
 }
 
 a {
-  color: #2f373e;
+  color: var(--main-text-color);
   text-decoration: none;
 }

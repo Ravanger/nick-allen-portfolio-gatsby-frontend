@@ -3,20 +3,19 @@ import styled from '@emotion/styled'
 import { Link } from 'gatsby'
 
 const StyledNav = styled.nav`
-  float: left;
+  > ul {
+    display: flex;
+    > li {
+      + li {
+        margin-left: 1.5em;
+      }
 
-  > ul > li {
-    display: inline-block;
-
-    + li {
-      margin-left: 1em;
-    }
-
-    > a {
-      font-family: Colus, serif;
-      font-size: 2em;
-      text-decoration: none;
-      text-transform: uppercase;
+      > a {
+        font-family: Colus, serif;
+        font-size: 2em;
+        text-decoration: none;
+        text-transform: uppercase;
+      }
     }
   }
 `

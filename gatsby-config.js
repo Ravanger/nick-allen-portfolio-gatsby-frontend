@@ -3,7 +3,7 @@ module.exports = {
     title: "Nick Allen's portfolio home page",
     description: 'Nick Allen is a designer from Toronto, ON',
     author: 'Boris Rossovsky',
-    siteUrl: 'https://site.url',
+    siteUrl: 'https://nick-allen.netlify.app',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -27,7 +27,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-canonical-urls',
       options: {
-        siteUrl: 'https://site.url',
+        siteUrl: 'https://nick-allen.netlify.app',
       },
     },
     {

@@ -45,10 +45,35 @@ const DivIntro = styled.div`
   }
 `
 
+const SpanRotated = styled.span`
+  display: block;
+  font-size: 2rem;
+  background-color: #fff2e4;
+  position: absolute;
+  top: 50%;
+  text-align: center;
+  font-family: Colus, serif;
+  padding: 0 0.5em;
+`
+
+const SpanLeft = styled(SpanRotated)`
+  transform: rotate(90deg) translate(-25%, 0);
+  transform-origin: 1rem 0;
+  left: 2rem;
+`
+
+const SpanRight = styled(SpanRotated)`
+  transform: rotate(-90deg) translate(25%, 0);
+  transform-origin: right;
+  right: 2rem;
+`
+
 const IndexPage: React.FC = () => (
   <Layout>
     <SEO title="Home" />
     <DivBorder />
+    <SpanLeft>Illustrations</SpanLeft>
+    <SpanRight>UI/UX</SpanRight>
     <DivIntro>
       <h1>Hi, I'm Nick</h1>
       <p>

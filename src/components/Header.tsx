@@ -10,7 +10,7 @@ const HeaderWrapper = styled.header`
   position: fixed;
   width: calc(100% - 4rem);
   margin: 0 2rem;
-  padding: 2rem;
+  padding: 2rem 1rem;
   align-items: center;
   border-bottom: solid 2px var(--main-accent-color);
   padding-bottom: 1rem;

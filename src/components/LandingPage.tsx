@@ -2,17 +2,17 @@ import React from 'react'
 import { Link } from 'gatsby'
 import styled from '@emotion/styled'
 
-import SEO from '@components/SEO'
-
 const DivBorder = styled.div`
   height: calc(100% - 4rem);
   width: calc(100% - 4rem);
   position: absolute;
   border: solid 2px var(--main-accent-color);
   border-top: none;
+  left: 2rem;
+  top: 0;
 `
 
-const DivIntro = styled.div`
+const DivContent = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -68,21 +68,20 @@ const SpanRight = styled(SpanRotated)`
   right: 2rem;
 `
 
-const LandingPage = () => {
+const LandingPage: React.FC = () => {
   return (
     <>
-      <SEO title="Home" />
       <DivBorder />
       <SpanLeft>Illustrations</SpanLeft>
       <SpanRight>UX/UI</SpanRight>
-      <DivIntro>
+      <DivContent>
         <h1>Hi, I'm Nick</h1>
         <p>
           I'm a Visual Designer based in Toronto who loves illustration and
           chicken tendies.
         </p>
         <Link to="/">Get in touch</Link>
-      </DivIntro>
+      </DivContent>
     </>
   )
 }

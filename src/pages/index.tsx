@@ -1,5 +1,5 @@
-import React from 'react'
-import ReactFullpage from '@fullpage/react-fullpage'
+import React, { useState } from 'react'
+import ReactPageScroller from 'react-page-scroller'
 
 import '@styles/colours.css'
 
@@ -9,27 +9,22 @@ import AboutPage from '@components/AboutPage'
 import SEO from '@components/SEO'
 
 const IndexPage: React.FC = () => {
-  return (
-    <Layout>
-      <SEO title="Nick Allen" />
-      <ReactFullpage
-        scrollingSpeed={1000}
-        render={() => {
-          return (
-            <ReactFullpage.Wrapper>
-              <div className="section">
-                <LandingPage />
-              </div>
-              <div className="section">
-                <AboutPage />
-              </div>
-            </ReactFullpage.Wrapper>
-          )
-        }}
-      />
+  const [currentPage, setCurrentPage] = useState<number | undefined>(undefined)
 
-      {/* <LandingPage />
-      <AboutPage /> */}
+  const handlePageChange = (number: number | undefined) => {
+    setCurrentPage(number)
+  }
+
+  return (
+    <Layout handlePageChange={setCurrentPage}>
+      <SEO title="Nick Allen" />
+      <ReactPageScroller
+        pageOnChange={handlePageChange}
+        customPageNumber={currentPage}
+      >
+        <LandingPage />
+        <AboutPage />
+      </ReactPageScroller>
     </Layout>
   )
 }

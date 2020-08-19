@@ -6,6 +6,10 @@ import '@styles/colours.css'
 import MainNav from '@components/MainNav'
 import Contact_Mini from '@components/Contact_Mini'
 
+type HeaderProps = {
+  handlePageChange?: React.Dispatch<number | undefined>
+}
+
 const HeaderWrapper = styled.header`
   display: flex;
   position: fixed;
@@ -28,10 +32,10 @@ const HeaderWrapper = styled.header`
   }
 `
 
-const Header: React.FC = () => {
+const Header: React.FC<HeaderProps> = props => {
   return (
     <HeaderWrapper>
-      <MainNav />
+      <MainNav handlePageChange={props.handlePageChange} />
       <Contact_Mini />
     </HeaderWrapper>
   )

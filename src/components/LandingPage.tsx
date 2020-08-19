@@ -16,13 +16,13 @@ const DivContent = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  position: absolute;
+  position: relative;
   text-align: center;
   align-items: center;
   max-width: 36rem;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -40%);
 
   > h1 {
     font-family: Colus, serif;

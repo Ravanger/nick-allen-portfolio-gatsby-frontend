@@ -1,21 +1,31 @@
 import React from 'react'
 import styled from '@emotion/styled'
 
+import '@styles/colours.css'
+
 import MainNav from '@components/MainNav'
 import Contact_Mini from '@components/Contact_Mini'
-import '@styles/colours.css'
 
 const HeaderWrapper = styled.header`
   display: flex;
   position: fixed;
-  width: calc(100% - 4rem);
-  margin: 0 2rem;
-  padding: 2rem 1rem;
+  width: 100%;
+  padding: 2rem;
   align-items: center;
-  border-bottom: solid 2px var(--main-accent-color);
   padding-bottom: 1rem;
   background-color: var(--main-bg-color);
   z-index: 10;
+  :after {
+    content: '';
+    background: var(--main-accent-color);
+    position: absolute;
+    bottom: 0;
+    left: calc(2rem - 1px);
+    height: calc(100vw - 4rem);
+    width: 2px;
+    transform: rotate(90deg);
+    transform-origin: bottom;
+  }
 `
 
 const Header: React.FC = () => {

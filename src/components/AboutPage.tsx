@@ -80,7 +80,7 @@ const AboutPage: React.FC = () => {
   const nickImage = data.file.childImageSharp.fluid
 
   return (
-    <SectionAbout id="about">
+    <SectionAbout>
       <div>
         <Img fluid={nickImage} alt="Nick Allen" />
         <section>

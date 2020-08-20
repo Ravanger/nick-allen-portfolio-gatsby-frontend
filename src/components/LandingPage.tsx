@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
+import { AnchorLink } from 'gatsby-plugin-anchor-links'
 import styled from '@emotion/styled'
 
 const DivBorder = styled.div`
@@ -72,15 +73,19 @@ const LandingPage: React.FC = () => {
   return (
     <section id="landing">
       <DivBorder />
-      <SpanLeft>Illustrations</SpanLeft>
-      <SpanRight>UX/UI</SpanRight>
+      <SpanLeft>
+        <Link to="/">Illustrations</Link>
+      </SpanLeft>
+      <SpanRight>
+        <Link to="/">UX/UI</Link>
+      </SpanRight>
       <DivContent>
         <h1>Hi, I'm Nick</h1>
         <p>
           I'm a Visual Designer based in Toronto who loves illustration and
           chicken tendies.
         </p>
-        <Link to="#contact">Get in touch</Link>
+        <AnchorLink to="/#contact">Get in touch</AnchorLink>
       </DivContent>
     </section>
   )

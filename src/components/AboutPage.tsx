@@ -5,12 +5,11 @@ import Img from 'gatsby-image'
 
 const SectionAbout = styled.section`
   display: flex;
-  position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -40%);
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
 
   > div {
     display: flex;
@@ -80,7 +79,7 @@ const AboutPage: React.FC = () => {
   const nickImage = data.file.childImageSharp.fluid
 
   return (
-    <SectionAbout>
+    <SectionAbout id="about">
       <div>
         <Img fluid={nickImage} alt="Nick Allen" />
         <section>

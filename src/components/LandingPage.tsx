@@ -16,13 +16,10 @@ const DivContent = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  position: relative;
   text-align: center;
   align-items: center;
-  max-width: 36rem;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -40%);
+  height: 100vh;
+  width: 100vw;
 
   > h1 {
     font-family: Colus, serif;
@@ -33,6 +30,7 @@ const DivContent = styled.div`
   > p {
     font-size: 2rem;
     margin-bottom: 2rem;
+    max-width: 36rem;
   }
 
   > a {
@@ -70,7 +68,7 @@ const SpanRight = styled(SpanRotated)`
 
 const LandingPage: React.FC = () => {
   return (
-    <>
+    <section id="landing">
       <DivBorder />
       <SpanLeft>Illustrations</SpanLeft>
       <SpanRight>UX/UI</SpanRight>
@@ -82,7 +80,7 @@ const LandingPage: React.FC = () => {
         </p>
         <Link to="/">Get in touch</Link>
       </DivContent>
-    </>
+    </section>
   )
 }
 

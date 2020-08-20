@@ -2,15 +2,10 @@ import React from 'react'
 
 import Header from '@components/Header'
 
-type PropTypes = {
-  children: React.ReactNode
-  handlePageChange?: React.Dispatch<number | undefined>
-}
-
-const Layout: React.FC<PropTypes> = props => {
+const Layout: React.FC = props => {
   return (
     <>
-      <Header handlePageChange={props.handlePageChange} />
+      <Header />
       <main>{props.children}</main>
     </>
   )

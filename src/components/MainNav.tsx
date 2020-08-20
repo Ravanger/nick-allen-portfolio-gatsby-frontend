@@ -2,14 +2,6 @@ import React from 'react'
 import styled from '@emotion/styled'
 import { Link } from 'gatsby'
 
-type MainNavProps = {
-  handlePageChange?: React.Dispatch<number | undefined>
-}
-
-const PAGE_NAV = {
-  ABOUT_PAGE: 1,
-}
-
 const StyledNav = styled.nav`
   > ul {
     display: flex;
@@ -37,7 +29,7 @@ const StyledNav = styled.nav`
   }
 `
 
-const MainNav: React.FC<MainNavProps> = props => {
+const MainNav: React.FC = () => {
   return (
     <StyledNav>
       <ul>
@@ -48,14 +40,7 @@ const MainNav: React.FC<MainNavProps> = props => {
           <Link to="/">UX/UI</Link>
         </li>
         <li>
-          <button
-            onClick={() =>
-              props.handlePageChange &&
-              props.handlePageChange(PAGE_NAV.ABOUT_PAGE)
-            }
-          >
-            About
-          </button>
+          <Link to="#about">About</Link>
         </li>
       </ul>
     </StyledNav>

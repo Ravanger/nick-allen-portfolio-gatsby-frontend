@@ -21,6 +21,10 @@ const SectionContact = styled.section`
     flex-direction: column;
     width: 32rem;
 
+    > p {
+      display: hidden;
+    }
+
     > input,
     textarea {
       background: none;
@@ -62,7 +66,17 @@ const ContactPage: React.FC = () => {
   return (
     <SectionContact id="contact">
       <h2>Contact</h2>
-      <form name="contact" action="POST" data-netlify="true">
+      <form
+        name="contact"
+        action="POST"
+        netlify-honeypot="bot-field"
+        data-netlify="true"
+      >
+        <p hidden>
+          <label>
+            Don’t fill this out if you're human: <input name="bot-field" />
+          </label>
+        </p>
         <input type="text" name="name" placeholder="name: " />
         <input type="email" name="email" placeholder="email: " />
         <textarea name="message" cols={30} rows={10} placeholder="message: " />

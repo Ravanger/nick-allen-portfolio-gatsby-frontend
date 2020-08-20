@@ -26,7 +26,7 @@ const SectionAbout = styled.section`
       width: 24rem;
       margin-left: 1rem;
 
-      > h1 {
+      > h2 {
         font-family: Colus, serif;
         font-size: 2rem;
         margin-bottom: 2rem;
@@ -83,7 +83,7 @@ const AboutPage: React.FC = () => {
       <div>
         <Img fluid={nickImage} alt="Nick Allen" />
         <section>
-          <h1>About me</h1>
+          <h2>About me</h2>
           <p>
             Hi, I'm Nick Allen. I'm a freelance visual designer living in
             Toronto. I specialize in UX/UI, graphic design, and illustration.

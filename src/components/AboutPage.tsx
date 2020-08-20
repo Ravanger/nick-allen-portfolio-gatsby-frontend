@@ -64,6 +64,12 @@ const SectionAbout = styled.section`
   }
 `
 
+const HrDivider = styled.hr`
+  margin-top: 8rem;
+  width: 90vw;
+  border: thin solid var(--main-accent-color);
+`
+
 const AboutPage: React.FC = () => {
   const data = useStaticQuery(graphql`
     query {
@@ -79,53 +85,56 @@ const AboutPage: React.FC = () => {
   const nickImage = data.file.childImageSharp.fluid
 
   return (
-    <SectionAbout id="about">
-      <div>
-        <Img fluid={nickImage} alt="Nick Allen" />
-        <section>
-          <h2>About me</h2>
-          <p>
-            Hi, I'm Nick Allen. I'm a freelance visual designer living in
-            Toronto. I specialize in UX/UI, graphic design, and illustration.
-          </p>
-          <p>
-            I've worked on projects ranging from websites, mobile apps, to
-            marketing campaigns and more. I'm always looking for new ways to
-            apply my skills to help myself and my clients grow.
-          </p>
-          <p>
-            Feel free to reach out if you'd like to work together or maybe just
-            grab some coffee.
-          </p>
-        </section>
-      </div>
-      <ul>
-        <li>
-          <h2>Education</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-            erat, sed diam voluptua. At vero eos et
-          </p>
-        </li>
-        <li>
-          <h2>Awards</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-            erat, sed diam voluptua. At vero eos et
-          </p>
-        </li>
-        <li>
-          <h2>Experience</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-            erat, sed diam voluptua. At vero eos et
-          </p>
-        </li>
-      </ul>
-    </SectionAbout>
+    <>
+      <SectionAbout id="about">
+        <div>
+          <Img fluid={nickImage} alt="Nick Allen" />
+          <section>
+            <h2>About me</h2>
+            <p>
+              Hi, I'm Nick Allen. I'm a freelance visual designer living in
+              Toronto. I specialize in UX/UI, graphic design, and illustration.
+            </p>
+            <p>
+              I've worked on projects ranging from websites, mobile apps, to
+              marketing campaigns and more. I'm always looking for new ways to
+              apply my skills to help myself and my clients grow.
+            </p>
+            <p>
+              Feel free to reach out if you'd like to work together or maybe
+              just grab some coffee.
+            </p>
+          </section>
+        </div>
+        <ul>
+          <li>
+            <h2>Education</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+              nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
+              erat, sed diam voluptua. At vero eos et
+            </p>
+          </li>
+          <li>
+            <h2>Awards</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+              nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
+              erat, sed diam voluptua. At vero eos et
+            </p>
+          </li>
+          <li>
+            <h2>Experience</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+              nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
+              erat, sed diam voluptua. At vero eos et
+            </p>
+          </li>
+        </ul>
+      </SectionAbout>
+      <HrDivider />
+    </>
   )
 }
 

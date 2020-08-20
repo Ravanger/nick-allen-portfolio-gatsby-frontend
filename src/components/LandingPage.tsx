@@ -10,6 +10,7 @@ const DivBorder = styled.div`
   border-top: none;
   left: 2rem;
   top: 0;
+  z-index: -1;
 `
 
 const DivContent = styled.div`
@@ -20,6 +21,7 @@ const DivContent = styled.div`
   align-items: center;
   height: 100vh;
   width: 100vw;
+  z-index: 5;
 
   > h1 {
     font-family: Colus, serif;
@@ -78,7 +80,7 @@ const LandingPage: React.FC = () => {
           I'm a Visual Designer based in Toronto who loves illustration and
           chicken tendies.
         </p>
-        <Link to="/">Get in touch</Link>
+        <Link to="#contact">Get in touch</Link>
       </DivContent>
     </section>
   )

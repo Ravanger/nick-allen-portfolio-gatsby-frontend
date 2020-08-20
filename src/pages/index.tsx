@@ -3,9 +3,10 @@ import React from 'react'
 import '@styles/colours.css'
 
 import Layout from '@components/Layout'
+import SEO from '@components/SEO'
 import LandingPage from '@components/LandingPage'
 import AboutPage from '@components/AboutPage'
-import SEO from '@components/SEO'
+import ContactPage from '@components/ContactPage'
 
 const IndexPage: React.FC = () => {
   return (
@@ -13,6 +14,7 @@ const IndexPage: React.FC = () => {
       <SEO title="Nick Allen" />
       <LandingPage />
       <AboutPage />
+      <ContactPage />
     </Layout>
   )
 }

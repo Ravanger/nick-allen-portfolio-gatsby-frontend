@@ -77,9 +77,15 @@ const ContactPage: React.FC = () => {
             Don’t fill this out if you're human: <input name="bot-field" />
           </label>
         </p>
-        <input type="text" name="name" placeholder="name: " />
-        <input type="email" name="email" placeholder="email: " />
-        <textarea name="message" cols={30} rows={10} placeholder="message: " />
+        <input type="text" name="name" placeholder="name: " required />
+        <input type="email" name="email" placeholder="email: " required />
+        <textarea
+          name="message"
+          cols={30}
+          rows={10}
+          placeholder="message: "
+          required
+        />
         <button type="submit">Send</button>
       </form>
       <div>

@@ -19,7 +19,7 @@ const DivContent = styled.div`
   justify-content: center;
   text-align: center;
   align-items: center;
-  height: 100vh;
+  height: calc(100vh + 4rem);
   width: 100vw;
   z-index: 5;
 

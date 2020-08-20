@@ -4,7 +4,7 @@ import Socials_Icons from './Socials_Icons'
 
 const SectionContact = styled.section`
   width: 100vw;
-  height: 100vh;
+  height: calc(100vh + 4rem);
   display: flex;
   flex-direction: column;
   justify-content: center;

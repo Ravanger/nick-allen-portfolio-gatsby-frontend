@@ -8,7 +8,7 @@ const SectionAbout = styled.section`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: calc(100vh + 4rem);
   width: 100vw;
 
   > div {

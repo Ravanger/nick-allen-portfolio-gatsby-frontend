@@ -68,7 +68,7 @@ const ContactPage: React.FC = () => {
       <h2>Contact</h2>
       <form
         name="contact"
-        action="POST"
+        method="POST"
         netlify-honeypot="bot-field"
         data-netlify="true"
       >

@@ -9,12 +9,14 @@ import SEO from '@components/SEO'
 
 const DivGallery = styled.div`
   max-width: 52rem;
+  min-height: 100vh;
   margin: 0 auto;
   padding-top: 7rem;
   text-align: center;
 
   > div {
     display: flex;
+    margin-top: 2rem;
 
     > div {
       padding-left: 0.2em;

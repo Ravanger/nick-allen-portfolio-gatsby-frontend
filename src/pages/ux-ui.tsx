@@ -38,7 +38,7 @@ const DivProjects = styled.div`
   height: 100vh;
   justify-content: center;
   margin-left: 4rem;
-  padding-top: 4rem;
+  padding-top: 7rem;
 `
 
 const UxuiPage: React.FC = () => {

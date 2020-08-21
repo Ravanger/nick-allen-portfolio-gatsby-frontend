@@ -58,7 +58,7 @@ module.exports = {
         background_color: '#FFF2E4',
         theme_color: '#FFF2E4',
         display: 'minimal-ui',
-        // icon: 'src/images/gatsby-icon.png',
+        icon: 'src/static/images/favicon.png',
       },
     },
     // {

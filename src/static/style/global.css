@@ -22,7 +22,8 @@ textarea {
   font-family: Roboto, sans-serif;
 }
 
-a {
+a,
+button {
   color: var(--main-text-color);
   text-decoration: none;
 }

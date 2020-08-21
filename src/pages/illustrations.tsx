@@ -1,4 +1,6 @@
 import React from 'react'
+import { useStaticQuery, graphql } from 'gatsby'
+import Img from 'gatsby-image'
 import styled from '@emotion/styled'
 import Masonry from 'react-masonry-css'
 
@@ -13,21 +15,43 @@ const DivGallery = styled.div`
 
   > div {
     display: flex;
-    width: auto;
 
     > div {
-      padding-left: 0.5em;
-      padding-right: 0.5em;
-      > p {
-        background: grey;
-        margin-bottom: 30px;
-        padding: 1em;
+      padding-left: 0.2em;
+      padding-right: 0.2em;
+      > div {
+        margin-bottom: 0.4em;
       }
     }
   }
 `
 
 const IllustrationsPage: React.FC = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      allFile(
+        filter: {
+          sourceInstanceName: { eq: "images" }
+          relativePath: { glob: "art/*" }
+        }
+      ) {
+        nodes {
+          childImageSharp {
+            fluid(maxWidth: 600) {
+              ...GatsbyImageSharpFluid_noBase64
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  const mockArray1: Node[] = data.allFile.nodes
+  const mockArray2: Node[] = data.allFile.nodes
+  const mockArray3: Node[] = data.allFile.nodes
+  const artImages: Node[] = mockArray1.concat(mockArray2.concat(mockArray3))
+  artImages.sort(() => 0.5 - Math.random())
+
   return (
     <Layout>
       <SEO title="Illustrations" />
@@ -41,11 +65,9 @@ const IllustrationsPage: React.FC = () => {
           className=""
           columnClassName=""
         >
-          <p>Illustrations. Under construction.</p>
-          <p>Illustrations. Under construction.</p>
-          <p>Illustrations. Under construction.</p>
-          <p>Illustrations. Under construction.</p>
-          <p>Illustrations. Under construction.</p>
+          {artImages.map((item: any, index: number) => (
+            <Img fluid={item.childImageSharp.fluid} key={index} />
+          ))}
         </Masonry>
       </DivGallery>
     </Layout>

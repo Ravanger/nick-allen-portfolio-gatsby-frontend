@@ -35,8 +35,8 @@ const IllustrationsPage: React.FC = () => {
         <Masonry
           breakpointCols={{
             default: 3,
-            900: 2,
-            600: 1,
+            820: 2,
+            500: 1,
           }}
           className=""
           columnClassName=""

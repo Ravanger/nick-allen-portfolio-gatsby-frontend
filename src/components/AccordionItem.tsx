@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import styled from '@emotion/styled'
+import { Collapse } from 'react-collapse'
 
 interface Props {
   item: {
@@ -22,17 +23,16 @@ const SectionAccordtionItem = styled.section`
     cursor: pointer;
   }
 
-  > p {
+  p {
     font-size: 1.2rem;
     width: 36rem;
-    max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
     line-height: 1.25rem;
   }
 
-  .max-height {
-    max-height: initial;
+  .ReactCollapse--collapse {
+    transition: height 500ms;
   }
 `
 
@@ -42,7 +42,9 @@ const AccordionItem = (props: Props) => {
   return (
     <SectionAccordtionItem key={props.item.id}>
       <button onClick={() => setIsOpen(!isOpen)}>{props.item.title}</button>
-      <p className={isOpen ? 'max-height' : ''}>{props.item.description}</p>
+      <Collapse isOpened={isOpen}>
+        <p>{props.item.description}</p>
+      </Collapse>
     </SectionAccordtionItem>
   )
 }

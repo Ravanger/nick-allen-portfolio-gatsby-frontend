@@ -23,7 +23,7 @@ const SectionAccordtionItem = styled.section`
   }
 
   > p {
-    max-width: 36rem;
+    width: 36rem;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;

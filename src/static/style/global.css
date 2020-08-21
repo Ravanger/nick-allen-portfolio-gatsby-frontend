@@ -26,4 +26,5 @@ a,
 button {
   color: var(--main-text-color);
   text-decoration: none;
+  text-align: left;
 }

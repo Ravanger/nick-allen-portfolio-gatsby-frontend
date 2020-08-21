@@ -37,7 +37,6 @@ const DivProjects = styled.div`
   flex-direction: column;
   height: 100vh;
   justify-content: center;
-  text-align: left;
   margin-left: 4rem;
   padding-top: 4rem;
 `

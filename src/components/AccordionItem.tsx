@@ -23,6 +23,7 @@ const SectionAccordtionItem = styled.section`
   }
 
   > p {
+    font-size: 1.2rem;
     width: 36rem;
     max-height: 0;
     overflow: hidden;

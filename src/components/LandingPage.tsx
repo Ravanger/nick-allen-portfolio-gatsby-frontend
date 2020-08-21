@@ -73,10 +73,10 @@ const LandingPage: React.FC = () => {
     <section id="landing">
       <DivBorder />
       <SpanLeft>
-        <Link to="/">Illustrations</Link>
+        <Link to="/illustrations">Illustrations</Link>
       </SpanLeft>
       <SpanRight>
-        <Link to="/">UX/UI</Link>
+        <Link to="/ux-ui">UX/UI</Link>
       </SpanRight>
       <DivContent>
         <h1>Hi, I'm Nick</h1>

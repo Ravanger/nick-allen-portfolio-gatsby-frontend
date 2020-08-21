@@ -14,7 +14,6 @@ module.exports = {
     'gatsby-plugin-emotion',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
-    'gatsby-plugin-anchor-links',
     {
       resolve: 'gatsby-alias-imports',
       options: {

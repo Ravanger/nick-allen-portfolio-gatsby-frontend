@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import { Link } from 'gatsby'
-import { AnchorLink } from 'gatsby-plugin-anchor-links'
 
 const StyledNav = styled.nav`
   > ul {
@@ -35,13 +34,13 @@ const MainNav: React.FC = () => {
     <StyledNav>
       <ul>
         <li>
-          <Link to="/">Illustrations</Link>
+          <Link to="/illustrations">Illustrations</Link>
         </li>
         <li>
-          <Link to="/">UX/UI</Link>
+          <Link to="/ux-ui">UX/UI</Link>
         </li>
         <li>
-          <AnchorLink to="/#about">About</AnchorLink>
+          <Link to="/#about">About</Link>
         </li>
       </ul>
     </StyledNav>

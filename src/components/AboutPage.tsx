@@ -75,30 +75,33 @@ const HrDivider = styled.hr`
 const AboutPage: React.FC = () => {
   const data = useStaticQuery(graphql`
     query {
-      file(sourceInstanceName: { eq: "images" }, name: { glob: "*headshot" }) {
-        childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid_noBase64
-          }
-        }
-      }
       strapiAboutPage {
         Description
         Header
         Education
         Experience
         Awards
+        Portrait {
+          childImageSharp {
+            fluid(maxWidth: 600) {
+              ...GatsbyImageSharpFluid_noBase64
+            }
+          }
+        }
       }
     }
   `)
-  const nickImage = data.file.childImageSharp.fluid
+
   const { strapiAboutPage } = data
 
   return (
     <>
       <SectionAbout id="about">
         <div>
-          <Img fluid={nickImage} alt="Nick Allen" />
+          <Img
+            fluid={strapiAboutPage.Portrait.childImageSharp.fluid}
+            alt="Nick Allen"
+          />
           <section>
             <h2>
               {strapiAboutPage.Header && strapiAboutPage.Header.length > 0

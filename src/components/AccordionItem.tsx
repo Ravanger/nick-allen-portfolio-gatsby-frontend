@@ -28,6 +28,7 @@ const SectionAccordtionItem = styled.section`
     overflow: hidden;
     transition: max-height 0.2s ease-out;
     line-height: 1.25rem;
+    white-space: pre-line;
   }
 
   .ReactCollapse--collapse {

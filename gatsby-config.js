@@ -15,6 +15,15 @@ module.exports = {
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     {
+      resolve: 'gatsby-source-strapi',
+      options: {
+        apiURL: process.env.GATSBY_API_URL,
+        queryLimit: 1000, // Default to 100
+        contentTypes: ['illustrations', 'ux-projects'],
+        singleTypes: ['landing-page', 'about-page', 'social'],
+      },
+    },
+    {
       resolve: 'gatsby-alias-imports',
       options: {
         aliases: {

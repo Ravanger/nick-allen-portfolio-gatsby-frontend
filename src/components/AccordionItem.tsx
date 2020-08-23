@@ -4,7 +4,6 @@ import { Collapse } from 'react-collapse'
 
 interface Props {
   item: {
-    id: number
     title: string
     description: string
   }
@@ -40,7 +39,7 @@ const AccordionItem = (props: Props) => {
   const [isOpen, setIsOpen] = useState<boolean>(false)
 
   return (
-    <SectionAccordtionItem key={props.item.id}>
+    <SectionAccordtionItem>
       <button onClick={() => setIsOpen(!isOpen)}>{props.item.title}</button>
       <Collapse isOpened={isOpen}>
         <p>{props.item.description}</p>

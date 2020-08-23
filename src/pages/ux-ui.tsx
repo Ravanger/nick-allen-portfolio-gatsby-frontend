@@ -1,36 +1,10 @@
 import React from 'react'
+import { useStaticQuery, graphql } from 'gatsby'
 import styled from '@emotion/styled'
 
 import Layout from '@components/Layout'
 import SEO from '@components/SEO'
 import AccordionItem from '@components/AccordionItem'
-
-const mockData = [
-  {
-    id: 0,
-    title: 'Rift',
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, porro! Exercitationem, ducimus laudantium magnam cupiditate cumque repudiandae illo, enim nisi quod adipisci non necessitatibus rem accusantium dignissimos sunt ipsum a?',
-  },
-  {
-    id: 1,
-    title: 'NEXT GBC',
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, porro! Exercitationem, ducimus laudantium magnam cupiditate cumque repudiandae illo, enim nisi quod adipisci non necessitatibus rem accusantium dignissimos sunt ipsum a?',
-  },
-  {
-    id: 2,
-    title: 'Adigo',
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, porro! Exercitationem, ducimus laudantium magnam cupiditate cumque repudiandae illo, enim nisi quod adipisci non necessitatibus rem accusantium dignissimos sunt ipsum a?',
-  },
-  {
-    id: 3,
-    title: 'Health numeracy project',
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, porro! Exercitationem, ducimus laudantium magnam cupiditate cumque repudiandae illo, enim nisi quod adipisci non necessitatibus rem accusantium dignissimos sunt ipsum a?',
-  },
-]
 
 const DivProjects = styled.div`
   display: flex;
@@ -42,11 +16,32 @@ const DivProjects = styled.div`
 `
 
 const UxuiPage: React.FC = () => {
+  const { allStrapiUxProjects } = useStaticQuery(graphql`
+    query {
+      allStrapiUxProjects {
+        nodes {
+          Title
+          Description
+          strapiId
+        }
+      }
+    }
+  `)
+
   return (
     <Layout>
       <SEO title="UX/UI" />
       <DivProjects>
-        {mockData && mockData.map(item => <AccordionItem item={item} />)}
+        {allStrapiUxProjects.nodes ? (
+          allStrapiUxProjects.nodes.map((item: any) => (
+            <AccordionItem
+              item={{ title: item.Title, description: item.Description }}
+              key={item.strapiId}
+            />
+          ))
+        ) : (
+          <p>Nothing to see here</p>
+        )}
       </DivProjects>
     </Layout>
   )

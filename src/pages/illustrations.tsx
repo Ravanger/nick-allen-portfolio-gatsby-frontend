@@ -29,48 +29,47 @@ const DivGallery = styled.div`
 `
 
 const IllustrationsPage: React.FC = () => {
-  const data = useStaticQuery(graphql`
+  const { allStrapiIllustrations } = useStaticQuery(graphql`
     query {
-      allFile(
-        filter: {
-          sourceInstanceName: { eq: "images" }
-          relativePath: { glob: "art/*" }
-        }
-      ) {
+      allStrapiIllustrations {
         nodes {
-          childImageSharp {
-            fluid(maxWidth: 600) {
-              ...GatsbyImageSharpFluid_noBase64
+          Image {
+            childImageSharp {
+              fluid(maxWidth: 600) {
+                ...GatsbyImageSharpFluid_noBase64
+              }
             }
           }
+          strapiId
         }
       }
     }
   `)
 
-  const mockArray1: Node[] = data.allFile.nodes
-  const mockArray2: Node[] = data.allFile.nodes
-  const mockArray3: Node[] = data.allFile.nodes
-  const artImages: Node[] = mockArray1.concat(mockArray2.concat(mockArray3))
-  artImages.sort(() => 0.5 - Math.random())
+  allStrapiIllustrations.nodes &&
+    allStrapiIllustrations.nodes.sort(() => 0.5 - Math.random())
 
   return (
     <Layout>
       <SEO title="Illustrations" />
       <DivGallery>
-        <Masonry
-          breakpointCols={{
-            default: 3,
-            820: 2,
-            500: 1,
-          }}
-          className=""
-          columnClassName=""
-        >
-          {artImages.map((item: any, index: number) => (
-            <Img fluid={item.childImageSharp.fluid} key={index} />
-          ))}
-        </Masonry>
+        {allStrapiIllustrations.nodes ? (
+          <Masonry
+            breakpointCols={{
+              default: 3,
+              820: 2,
+              500: 1,
+            }}
+            className=""
+            columnClassName=""
+          >
+            {allStrapiIllustrations.nodes.map((item: any, index: number) => (
+              <Img fluid={item.Image.childImageSharp.fluid} key={index} />
+            ))}
+          </Masonry>
+        ) : (
+          <p>Nothing to see here</p>
+        )}
       </DivGallery>
     </Layout>
   )

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import { Link, useStaticQuery, graphql } from 'gatsby'
 import styled from '@emotion/styled'
 
 const DivBorder = styled.div`
@@ -69,6 +69,15 @@ const SpanRight = styled(SpanRotated)`
 `
 
 const LandingPage: React.FC = () => {
+  const { strapiLandingPage } = useStaticQuery(graphql`
+    query {
+      strapiLandingPage {
+        Header
+        Description
+      }
+    }
+  `)
+
   return (
     <section id="landing">
       <DivBorder />
@@ -79,10 +88,16 @@ const LandingPage: React.FC = () => {
         <Link to="/ux-ui">UX/UI</Link>
       </SpanRight>
       <DivContent>
-        <h1>Hi, I'm Nick</h1>
+        <h1>
+          {strapiLandingPage.Header && strapiLandingPage.Header.length > 0
+            ? strapiLandingPage.Header
+            : "Hi, I'm Nick"}
+        </h1>
         <p>
-          I'm a Visual Designer based in Toronto who loves illustration and
-          chicken tendies.
+          {strapiLandingPage.Description &&
+          strapiLandingPage.Description.length > 0
+            ? strapiLandingPage.Description
+            : "I'm a Visual Designer based in Toronto who loves illustration and chicken tendies."}
         </p>
         <Link to="/#contact">Get in touch</Link>
       </DivContent>

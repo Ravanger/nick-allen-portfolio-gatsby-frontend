@@ -32,6 +32,7 @@ const SectionAbout = styled.section`
         margin-bottom: 2rem;
       }
       > p {
+        white-space: pre-line;
         font-size: 1rem;
         margin-bottom: 2rem;
         font-size: 1.2rem;
@@ -58,6 +59,7 @@ const SectionAbout = styled.section`
         font-weight: bold;
       }
       > p {
+        white-space: pre-line;
         font-size: 1.1rem;
       }
     }
@@ -80,9 +82,17 @@ const AboutPage: React.FC = () => {
           }
         }
       }
+      strapiAboutPage {
+        Description
+        Header
+        Education
+        Experience
+        Awards
+      }
     }
   `)
   const nickImage = data.file.childImageSharp.fluid
+  const { strapiAboutPage } = data
 
   return (
     <>
@@ -90,19 +100,16 @@ const AboutPage: React.FC = () => {
         <div>
           <Img fluid={nickImage} alt="Nick Allen" />
           <section>
-            <h2>About me</h2>
+            <h2>
+              {strapiAboutPage.Header && strapiAboutPage.Header.length > 0
+                ? strapiAboutPage.Header
+                : 'About me'}
+            </h2>
             <p>
-              Hi, I'm Nick Allen. I'm a freelance visual designer living in
-              Toronto. I specialize in UX/UI, graphic design, and illustration.
-            </p>
-            <p>
-              I've worked on projects ranging from websites, mobile apps, to
-              marketing campaigns and more. I'm always looking for new ways to
-              apply my skills to help myself and my clients grow.
-            </p>
-            <p>
-              Feel free to reach out if you'd like to work together or maybe
-              just grab some coffee.
+              {strapiAboutPage.Description &&
+              strapiAboutPage.Description.length > 0
+                ? strapiAboutPage.Description
+                : "Hi, I'm Nick Allen. I'm a freelance visual designer living in Toronto. I specialize in UX/UI, graphic design, and illustration. \n\n I've worked on projects ranging from websites, mobile apps, to marketing campaigns and more. I'm always looking for new ways to apply my skills to help myself and my clients grow. \n\n Feel free to reach out if you'd like to work together or maybe just grab some coffee."}
             </p>
           </section>
         </div>
@@ -110,25 +117,26 @@ const AboutPage: React.FC = () => {
           <li>
             <h2>Education</h2>
             <p>
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-              nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-              erat, sed diam voluptua. At vero eos et
+              {strapiAboutPage.Education && strapiAboutPage.Education.length > 0
+                ? strapiAboutPage.Education
+                : 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et'}
             </p>
           </li>
           <li>
             <h2>Awards</h2>
             <p>
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-              nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-              erat, sed diam voluptua. At vero eos et
+              {strapiAboutPage.Awards && strapiAboutPage.Awards.length > 0
+                ? strapiAboutPage.Awards
+                : 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et'}
             </p>
           </li>
           <li>
             <h2>Experience</h2>
             <p>
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-              nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-              erat, sed diam voluptua. At vero eos et
+              {strapiAboutPage.Experience &&
+              strapiAboutPage.Experience.length > 0
+                ? strapiAboutPage.Experience
+                : 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et'}
             </p>
           </li>
         </ul>

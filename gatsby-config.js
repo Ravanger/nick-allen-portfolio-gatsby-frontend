@@ -17,7 +17,7 @@ module.exports = {
     {
       resolve: 'gatsby-source-strapi',
       options: {
-        apiURL: process.env.GATSBY_API_URL,
+        apiURL: 'https://nick-allen-portfolio-strapi.herokuapp.com',
         queryLimit: 1000, // Default to 100
         contentTypes: ['illustrations', 'ux-projects'],
         singleTypes: ['landing-page', 'about-page', 'social'],

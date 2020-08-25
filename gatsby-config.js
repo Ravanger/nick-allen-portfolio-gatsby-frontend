@@ -19,7 +19,7 @@ module.exports = {
       options: {
         apiURL: 'https://nick-allen-portfolio-strapi.herokuapp.com',
         queryLimit: 1000, // Default to 100
-        contentTypes: ['illustrations', 'ux-projects'],
+        contentTypes: ['ux-projects'],
         singleTypes: ['landing-page', 'about-page', 'social'],
       },
     },

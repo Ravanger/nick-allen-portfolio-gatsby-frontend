@@ -2,14 +2,21 @@ import React from 'react'
 import { Link, useStaticQuery, graphql } from 'gatsby'
 import styled from '@emotion/styled'
 
+const SectionLanding = styled.section`
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+`
+
 const DivBorder = styled.div`
-  height: calc(100% - 4rem);
+  height: 100vh;
   width: calc(100% - 4rem);
+  margin-bottom: 4rem;
   position: absolute;
   border: solid 2px var(--main-accent-color);
   border-top: none;
-  left: 2rem;
-  top: 0;
   z-index: -1;
 `
 
@@ -19,9 +26,9 @@ const DivContent = styled.div`
   justify-content: center;
   text-align: center;
   align-items: center;
-  height: calc(100vh + 4rem);
   width: 100vw;
   z-index: 5;
+  margin-top: 7rem;
 
   > h1 {
     font-family: Colus, serif;
@@ -49,7 +56,6 @@ const SpanRotated = styled.span`
   font-size: 2rem;
   background-color: var(--main-bg-color);
   position: absolute;
-  top: 50%;
   text-align: center;
   font-family: Colus, serif;
   padding: 0 0.5em;
@@ -60,12 +66,14 @@ const SpanLeft = styled(SpanRotated)`
   transform: rotate(90deg) translate(-25%, 0);
   transform-origin: 1rem 0;
   left: 2rem;
+  top: calc(50% + 2rem);
 `
 
 const SpanRight = styled(SpanRotated)`
   transform: rotate(-90deg) translate(25%, 0);
   transform-origin: right;
   right: 2rem;
+  top: 50%;
 `
 
 const LandingPage: React.FC = () => {
@@ -79,13 +87,13 @@ const LandingPage: React.FC = () => {
   `)
 
   return (
-    <section id="landing">
+    <SectionLanding id="landing">
       <DivBorder />
       <SpanLeft>
-        <Link to="/illustrations">Illustrations</Link>
+        <Link to="/work">Work</Link>
       </SpanLeft>
       <SpanRight>
-        <Link to="/ux-ui">UX/UI</Link>
+        <Link to="/about">About</Link>
       </SpanRight>
       <DivContent>
         <h1>
@@ -99,9 +107,9 @@ const LandingPage: React.FC = () => {
             ? strapiLandingPage.Description
             : "I'm a Visual Designer based in Toronto who loves illustration and chicken tendies."}
         </p>
-        <Link to="/#contact">Get in touch</Link>
+        <Link to="/contact">Get in touch</Link>
       </DivContent>
-    </section>
+    </SectionLanding>
   )
 }
 

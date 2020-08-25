@@ -15,7 +15,7 @@ const DivProjects = styled.div`
   padding-top: 7rem;
 `
 
-const UxuiPage: React.FC = () => {
+const WorkPage: React.FC = () => {
   const { allStrapiUxProjects } = useStaticQuery(graphql`
     query {
       allStrapiUxProjects {
@@ -30,7 +30,7 @@ const UxuiPage: React.FC = () => {
 
   return (
     <Layout>
-      <SEO title="UX/UI" />
+      <SEO title="Work" />
       <DivProjects>
         {allStrapiUxProjects.nodes ? (
           allStrapiUxProjects.nodes.map((item: any) => (
@@ -47,4 +47,4 @@ const UxuiPage: React.FC = () => {
   )
 }
 
-export default UxuiPage
+export default WorkPage

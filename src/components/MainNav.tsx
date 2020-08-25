@@ -34,13 +34,10 @@ const MainNav: React.FC = () => {
     <StyledNav>
       <ul>
         <li>
-          <Link to="/illustrations">Illustrations</Link>
+          <Link to="/work">Work</Link>
         </li>
         <li>
-          <Link to="/ux-ui">UX/UI</Link>
-        </li>
-        <li>
-          <Link to="/#about">About</Link>
+          <Link to="/about">About</Link>
         </li>
       </ul>
     </StyledNav>

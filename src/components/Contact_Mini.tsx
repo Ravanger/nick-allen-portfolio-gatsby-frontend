@@ -21,7 +21,7 @@ const DivContact = styled.div`
 const Contact_Mini: React.FC = () => {
   return (
     <DivContact>
-      <Link to="/#contact">Contact</Link>
+      <Link to="/contact">Contact</Link>
       <Socials_Icons fontsize="1.5em" />
     </DivContact>
   )

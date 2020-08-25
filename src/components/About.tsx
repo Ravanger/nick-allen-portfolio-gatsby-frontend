@@ -66,12 +66,6 @@ const SectionAbout = styled.section`
   }
 `
 
-const HrDivider = styled.hr`
-  margin-top: 8rem;
-  width: 90vw;
-  border: thin solid var(--main-accent-color);
-`
-
 const About: React.FC = () => {
   const data = useStaticQuery(graphql`
     query {
@@ -144,7 +138,6 @@ const About: React.FC = () => {
           </li>
         </ul>
       </SectionAbout>
-      <HrDivider />
     </>
   )
 }

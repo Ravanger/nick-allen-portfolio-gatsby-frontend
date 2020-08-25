@@ -6,7 +6,7 @@ import About from '@components/About'
 
 const AboutPage: React.FC = () => {
   return (
-    <Layout>
+    <Layout linkLeft="work" linkRight="about">
       <SEO title="About" />
       <About />
     </Layout>

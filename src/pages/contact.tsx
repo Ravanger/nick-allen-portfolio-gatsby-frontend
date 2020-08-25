@@ -6,7 +6,7 @@ import Contact from '@components/Contact'
 
 const ContactPage: React.FC = () => {
   return (
-    <Layout>
+    <Layout linkLeft="work" linkRight="about">
       <SEO title="Contact" />
       <Contact />
     </Layout>

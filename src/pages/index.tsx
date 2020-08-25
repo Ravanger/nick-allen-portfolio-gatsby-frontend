@@ -6,7 +6,7 @@ import Landing from '@components/Landing'
 
 const IndexPage: React.FC = () => {
   return (
-    <Layout>
+    <Layout linkLeft="work" linkRight="about">
       <SEO title="Nick Allen" />
       <Landing />
     </Layout>

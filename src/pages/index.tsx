@@ -2,13 +2,13 @@ import React from 'react'
 
 import Layout from '@components/Layout'
 import SEO from '@components/SEO'
-import LandingPage from '@components/LandingPage'
+import Landing from '@components/Landing'
 
 const IndexPage: React.FC = () => {
   return (
     <Layout>
       <SEO title="Nick Allen" />
-      <LandingPage />
+      <Landing />
     </Layout>
   )
 }

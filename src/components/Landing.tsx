@@ -76,7 +76,7 @@ const SpanRight = styled(SpanRotated)`
   top: 50%;
 `
 
-const LandingPage: React.FC = () => {
+const Landing: React.FC = () => {
   const { strapiLandingPage } = useStaticQuery(graphql`
     query {
       strapiLandingPage {
@@ -113,4 +113,4 @@ const LandingPage: React.FC = () => {
   )
 }
 
-export default LandingPage
+export default Landing

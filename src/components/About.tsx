@@ -89,7 +89,7 @@ const About: React.FC = () => {
 
   return (
     <>
-      <DivAbout id="about">
+      <DivAbout>
         <div>
           <Img
             fluid={strapiAboutPage.Portrait.childImageSharp.fluid}

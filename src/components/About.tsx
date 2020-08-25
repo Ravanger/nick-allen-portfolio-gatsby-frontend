@@ -72,7 +72,7 @@ const HrDivider = styled.hr`
   border: thin solid var(--main-accent-color);
 `
 
-const AboutPage: React.FC = () => {
+const About: React.FC = () => {
   const data = useStaticQuery(graphql`
     query {
       strapiAboutPage {
@@ -149,4 +149,4 @@ const AboutPage: React.FC = () => {
   )
 }
 
-export default AboutPage
+export default About

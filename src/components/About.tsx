@@ -3,13 +3,12 @@ import styled from '@emotion/styled'
 import { useStaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
-const SectionAbout = styled.section`
+const DivAbout = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: calc(100vh + 4rem);
-  width: 100vw;
+  text-align: left;
 
   > div {
     display: flex;
@@ -90,7 +89,7 @@ const About: React.FC = () => {
 
   return (
     <>
-      <SectionAbout id="about">
+      <DivAbout id="about">
         <div>
           <Img
             fluid={strapiAboutPage.Portrait.childImageSharp.fluid}
@@ -137,7 +136,7 @@ const About: React.FC = () => {
             </p>
           </li>
         </ul>
-      </SectionAbout>
+      </DivAbout>
     </>
   )
 }

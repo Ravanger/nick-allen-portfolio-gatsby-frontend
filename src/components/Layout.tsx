@@ -19,6 +19,10 @@ const MainContent = styled.main`
   padding-top: 7rem;
   min-height: calc(100vh - 2rem);
   text-align: center;
+
+  > div {
+    padding: 1rem;
+  }
 `
 
 const SpanRotated = styled.span`

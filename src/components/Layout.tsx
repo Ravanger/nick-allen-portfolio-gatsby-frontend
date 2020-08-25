@@ -11,8 +11,6 @@ type LayoutProps = {
 
 const MainContent = styled.main`
   display: flex;
-  justify-content: center;
-  align-items: center;
   border: solid 2px var(--main-accent-color);
   margin: 0 2rem;
   margin-bottom: 2rem;

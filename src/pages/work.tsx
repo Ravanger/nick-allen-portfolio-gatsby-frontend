@@ -7,12 +7,9 @@ import SEO from '@components/SEO'
 import AccordionItem from '@components/AccordionItem'
 
 const DivProjects = styled.div`
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  justify-content: center;
+  text-align: left;
+  margin: auto;
   margin-left: 4rem;
-  padding-top: 7rem;
 `
 
 const WorkPage: React.FC = () => {

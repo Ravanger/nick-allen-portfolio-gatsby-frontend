@@ -6,6 +6,7 @@ const DivLanding = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: auto;
 
   * + * {
     margin-top: 2rem;
@@ -18,7 +19,7 @@ const DivLanding = styled.div`
 
   > p {
     font-size: 2rem;
-    max-width: 36rem;
+    width: 36rem;
   }
 
   > a {

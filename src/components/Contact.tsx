@@ -3,6 +3,8 @@ import styled from '@emotion/styled'
 import Socials_Icons from './Socials_Icons'
 
 const DivContact = styled.div`
+  margin: auto;
+
   > h2 {
     font-family: Colus, serif;
     font-size: 2rem;

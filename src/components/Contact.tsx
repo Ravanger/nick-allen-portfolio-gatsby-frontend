@@ -62,7 +62,7 @@ const SectionContact = styled.section`
   }
 `
 
-const ContactPage: React.FC = () => {
+const Contact: React.FC = () => {
   return (
     <SectionContact id="contact">
       <h2>Contact</h2>
@@ -96,4 +96,4 @@ const ContactPage: React.FC = () => {
   )
 }
 
-export default ContactPage
+export default Contact

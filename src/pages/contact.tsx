@@ -2,15 +2,15 @@ import React from 'react'
 
 import Layout from '@components/Layout'
 import SEO from '@components/SEO'
-import ContactPage from '@components/ContactPage'
+import Contact from '@components/Contact'
 
-const IndexPage: React.FC = () => {
+const ContactPage: React.FC = () => {
   return (
     <Layout>
       <SEO title="Contact" />
-      <ContactPage />
+      <Contact />
     </Layout>
   )
 }
 
-export default IndexPage
+export default ContactPage

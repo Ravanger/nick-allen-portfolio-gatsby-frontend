@@ -2,14 +2,7 @@ import React from 'react'
 import styled from '@emotion/styled'
 import Socials_Icons from './Socials_Icons'
 
-const SectionContact = styled.section`
-  width: 100vw;
-  height: calc(100vh + 4rem);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
+const DivContact = styled.div`
   > h2 {
     font-family: Colus, serif;
     font-size: 2rem;
@@ -45,6 +38,7 @@ const SectionContact = styled.section`
   }
 
   > div {
+    display: inline-block;
     margin-top: 4rem;
     border: 2px solid;
     padding: 2rem 4rem;
@@ -52,10 +46,8 @@ const SectionContact = styled.section`
 
     > nav {
       > ul {
-        > li {
-          + li {
-            margin-left: 2rem;
-          }
+        > li + li {
+          margin-left: 2rem;
         }
       }
     }
@@ -64,7 +56,7 @@ const SectionContact = styled.section`
 
 const Contact: React.FC = () => {
   return (
-    <SectionContact id="contact">
+    <DivContact>
       <h2>Contact</h2>
       <form
         name="contact"
@@ -92,7 +84,7 @@ const Contact: React.FC = () => {
       <div>
         <Socials_Icons fontsize="2em" />
       </div>
-    </SectionContact>
+    </DivContact>
   )
 }
 

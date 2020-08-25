@@ -1,8 +1,6 @@
 import React from 'react'
 import styled from '@emotion/styled'
 
-import '@styles/colours.css'
-
 import MainNav from '@components/MainNav'
 import Contact_Mini from '@components/Contact_Mini'
 

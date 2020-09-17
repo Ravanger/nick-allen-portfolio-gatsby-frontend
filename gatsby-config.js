@@ -52,13 +52,6 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'images',
-        path: `${__dirname}/src/static/images`,
-      },
-    },
-    {
       resolve: 'gatsby-plugin-manifest',
       options: {
         name: "Nick Allen's Portfolio",

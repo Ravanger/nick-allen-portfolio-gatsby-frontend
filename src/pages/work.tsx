@@ -26,7 +26,7 @@ const WorkPage: React.FC = () => {
   `)
 
   return (
-    <Layout linkLeft="work" linkRight="about">
+    <Layout>
       <SEO title="Work" />
       <DivProjects>
         {allStrapiUxProjects.nodes ? (

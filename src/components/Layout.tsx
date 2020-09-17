@@ -1,13 +1,8 @@
 import React from 'react'
-import { Link } from 'gatsby'
 import styled from '@emotion/styled'
+import { Link } from 'gatsby'
 
 import Header from '@components/Header'
-
-type LayoutProps = {
-  linkLeft: string
-  linkRight: string
-}
 
 const MainContent = styled.main`
   display: flex;
@@ -47,15 +42,15 @@ const SpanRight = styled(SpanRotated)`
   top: 50%;
 `
 
-const Layout: React.FC<LayoutProps> = props => {
+const Layout: React.FC = props => {
   return (
     <>
       <Header />
       <SpanLeft>
-        <Link to={`/${props.linkLeft}`}>{props.linkLeft}</Link>
+        <Link to="/work">Work</Link>
       </SpanLeft>
       <SpanRight>
-        <Link to={`/${props.linkRight}`}>{props.linkRight}</Link>
+        <Link to="/about">About</Link>
       </SpanRight>
       <MainContent>{props.children}</MainContent>
     </>

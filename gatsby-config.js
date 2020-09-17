@@ -18,7 +18,7 @@ module.exports = {
       resolve: 'gatsby-source-strapi',
       options: {
         apiURL: 'https://nick-allen-portfolio-strapi.herokuapp.com',
-        queryLimit: 1000, // Default to 100
+        queryLimit: 1000,
         contentTypes: ['ux-projects'],
         singleTypes: ['landing-page', 'about-page', 'social'],
       },
@@ -63,13 +63,5 @@ module.exports = {
         icon: 'src/static/images/favicon.png',
       },
     },
-    // {
-    //   resolve: 'gatsby-plugin-offline',
-    //   options: {
-    //     workboxConfig: {
-    //       globPatterns: ['**/*.{js,jsx,jpg,png,html,css}'],
-    //     },
-    //   },
-    // },
   ],
 }

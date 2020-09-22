@@ -20,6 +20,7 @@ const DivLanding = styled.div`
   > p {
     font-size: 2rem;
     width: 36rem;
+    white-space: pre-line;
   }
 
   > a {

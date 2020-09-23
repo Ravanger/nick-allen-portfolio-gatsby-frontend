@@ -1,11 +1,16 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import { Link } from 'gatsby'
+import { motion, AnimatePresence } from 'framer-motion'
 
 import Header from '@components/Header'
 
+const duration = 1
+
 const MainContent = styled.main`
   display: flex;
+  align-items: center;
+  justify-content: center;
   border: solid 2px var(--main-accent-color);
   margin: 0 2rem;
   margin-bottom: 2rem;
@@ -14,7 +19,9 @@ const MainContent = styled.main`
   text-align: center;
 
   > div {
-    padding: 1rem;
+    display: flex;
+    min-width: 100%;
+    position: absolute;
   }
 `
 
@@ -42,6 +49,29 @@ const SpanRight = styled(SpanRotated)`
   top: 50%;
 `
 
+const variants = {
+  initial: {
+    opacity: 0,
+    scale: 0.99,
+    y: '20%',
+  },
+  enter: {
+    opacity: 1,
+    y: 0,
+    x: 0,
+    scale: 1,
+    transition: {
+      duration: duration,
+      delay: duration,
+    },
+  },
+  exit: {
+    opacity: 0,
+    scale: 0.95,
+    transition: { duration: duration },
+  },
+}
+
 const Layout: React.FC = props => {
   return (
     <>
@@ -52,7 +82,19 @@ const Layout: React.FC = props => {
       <SpanRight>
         <Link to="/about">About</Link>
       </SpanRight>
-      <MainContent>{props.children}</MainContent>
+      <MainContent>
+        <AnimatePresence initial={false}>
+          <motion.div
+            key={typeof location !== 'undefined' ? location.pathname : ''}
+            variants={variants}
+            initial="initial"
+            animate="enter"
+            exit="exit"
+          >
+            {props.children}
+          </motion.div>
+        </AnimatePresence>
+      </MainContent>
     </>
   )
 }

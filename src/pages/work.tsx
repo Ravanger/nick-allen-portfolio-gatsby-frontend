@@ -2,7 +2,6 @@ import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import styled from '@emotion/styled'
 
-import Layout from '@components/Layout'
 import SEO from '@components/SEO'
 import AccordionItem from '@components/AccordionItem'
 
@@ -26,7 +25,7 @@ const WorkPage: React.FC = () => {
   `)
 
   return (
-    <Layout>
+    <>
       <SEO title="Work" />
       <DivProjects>
         {allStrapiUxProjects.nodes ? (
@@ -40,7 +39,7 @@ const WorkPage: React.FC = () => {
           <p>Nothing to see here</p>
         )}
       </DivProjects>
-    </Layout>
+    </>
   )
 }
 

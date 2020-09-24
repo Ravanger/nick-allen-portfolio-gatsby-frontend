@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import styled from '@emotion/styled'
-import { Collapse } from 'react-collapse'
 import ReactMarkdown from 'react-markdown'
+import { AnimatePresence, motion } from 'framer-motion'
 
 interface AccordionProps {
   item: {
@@ -38,6 +38,10 @@ const SectionAccordionItem = styled.section`
     white-space: pre-line;
   }
 
+  span {
+    display: inline-block;
+  }
+
   strong {
     font-weight: bold;
   }
@@ -69,12 +73,28 @@ const AccordionItem = (props: AccordionProps) => {
   return (
     <SectionAccordionItem>
       <button onClick={() => setIsOpen(!isOpen)}>
-        {isOpen ? '▾' : '▸'}
+        <motion.span initial={false} animate={{ rotate: isOpen ? 90 : 0 }}>
+          ▸
+        </motion.span>
         {props.item.title}
       </button>
-      <Collapse isOpened={isOpen}>
-        <ReactMarkdown>{props.item.description}</ReactMarkdown>
-      </Collapse>
+
+      <AnimatePresence initial={false}>
+        {isOpen && (
+          <motion.div
+            initial="collapsed"
+            animate="open"
+            exit="collapsed"
+            variants={{
+              open: { opacity: 1, height: 'auto' },
+              collapsed: { opacity: 0, height: 0 },
+            }}
+            transition={{ duration: 0.5, ease: [0, 0.62, 0.23, 1] }}
+          >
+            <ReactMarkdown>{props.item.description}</ReactMarkdown>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </SectionAccordionItem>
   )
 }

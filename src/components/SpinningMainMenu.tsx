@@ -6,98 +6,98 @@ const DivSpinningMenu = styled.div`
   width: 100%;
   height: 100%;
   position: absolute;
-`
 
-const SpanRotated = styled.span`
-  display: block;
-  font-size: 2rem;
-  background-color: var(--main-bg-color);
-  position: absolute;
-  font-family: Colus, serif;
-  padding: 0 0.5em;
-  z-index: 20;
-  top: 50%;
-  text-align: center;
-`
+  > span {
+    display: block;
+    font-size: 2rem;
+    background-color: var(--main-bg-color);
+    position: absolute;
+    font-family: Colus, serif;
+    padding: 0 0.5em;
+    z-index: 20;
+    top: 50%;
+    text-align: center;
+  }
 
-const SpanLeft = styled(SpanRotated)`
-  transform: rotate(-90deg) translate(calc(-50% - 2rem));
-  transform-origin: left;
-  left: 2rem;
-`
+  .left {
+    transform: rotate(-90deg) translate(calc(-50% - 2rem));
+    transform-origin: left;
+    left: 2rem;
+  }
 
-const SpanRight = styled(SpanRotated)`
-  transform: rotate(90deg) translate(calc(50% + 2rem));
-  transform-origin: right;
-  right: 2rem;
-`
+  .right {
+    transform: rotate(90deg) translate(calc(50% + 2rem));
+    transform-origin: right;
+    right: 2rem;
+  }
 
-const SpanBottom = styled(SpanRotated)`
-  bottom: 1rem;
-  top: auto;
-  left: 50%;
-  transform: translate(-50%);
-`
+  .bottom {
+    bottom: 1rem;
+    top: auto;
+    left: 50%;
+    transform: translate(-50%);
+  }
 
-const SpanTop = styled(SpanRotated)`
-  top: 6rem;
-  left: 50%;
-  transform: translate(-50%);
+  .top {
+    top: 6rem;
+    left: 50%;
+    transform: translate(-50%);
+  }
 `
 
 const landingMenu = (
   <DivSpinningMenu>
-    <SpanLeft>
+    <span className="left">
       <Link to="/work">Work</Link>
-    </SpanLeft>
-    <SpanRight>
+    </span>
+    <span className="right">
       <Link to="/about">About</Link>
-    </SpanRight>
-    <SpanBottom>
+    </span>
+    <span className="bottom">
       <Link to="/contact">Contact</Link>
-    </SpanBottom>
+    </span>
   </DivSpinningMenu>
 )
 
 const aboutMenu = (
   <DivSpinningMenu>
-    <SpanTop>
+    <span className="top">
       <Link to="/about">About</Link>
-    </SpanTop>
-    <SpanLeft>
+    </span>
+    <span className="left">
       <Link to="/work">Work</Link>
-    </SpanLeft>
-    <SpanBottom>
+    </span>
+    <span className="bottom">
       <Link to="/contact">Contact</Link>
-    </SpanBottom>
+    </span>
   </DivSpinningMenu>
 )
 
 const workMenu = (
   <DivSpinningMenu>
-    <SpanTop>
+    <span className="top">
       <Link to="/work">Work</Link>
-    </SpanTop>
-    <SpanRight>
+    </span>
+    <span className="right">
       <Link to="/about">About</Link>
-    </SpanRight>
-    <SpanBottom>
+    </span>
+    <span className="bottom">
       <Link to="/contact">Contact</Link>
-    </SpanBottom>
+    </span>
   </DivSpinningMenu>
 )
 
 const contactMenu = (
   <DivSpinningMenu>
-    <SpanTop>
+    <span className="top">
       <Link to="/contact">Contact</Link>
-    </SpanTop>
-    <SpanLeft>
+    </span>
+    <span className="left">
       <Link to="/work">Work</Link>
-    </SpanLeft>
-    <SpanRight>
+    </span>
+    <span className="right">
       <Link to="/about">About</Link>
-    </SpanRight>
+    </span>
   </DivSpinningMenu>
 )
 

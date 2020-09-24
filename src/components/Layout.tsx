@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import Header from '@components/Header'
 import SpinningMainMenu from '@components/SpinningMainMenu'
 
-const duration = 1
+const duration = 0.2
 
 const MainContent = styled.main`
   display: flex;
@@ -46,7 +46,7 @@ const variants = {
   },
   exit: {
     opacity: 0,
-    scale: 0.95,
+    scale: 0.99,
     transition: { duration: duration },
   },
 }

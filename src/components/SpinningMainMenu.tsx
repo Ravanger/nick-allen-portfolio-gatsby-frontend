@@ -19,22 +19,23 @@ const SpanRotated = styled.span`
 `
 
 const SpanLeft = styled(SpanRotated)`
-  transform: rotate(90deg);
+  transform: rotate(-90deg);
   transform-origin: left;
   left: 2rem;
-  top: calc(50% - 2rem);
+  top: calc(50% + 6rem);
 `
 
 const SpanRight = styled(SpanRotated)`
-  transform: rotate(-90deg);
+  transform: rotate(90deg);
   transform-origin: right;
   right: 2rem;
-  top: calc(50% - 2rem);
+  top: calc(50% + 6rem);
 `
 
 const SpanBottom = styled(SpanRotated)`
   bottom: 1rem;
   left: calc(50% - 6rem);
+  transform: rotate(180deg);
 `
 
 const SpinningMainMenu = () => {

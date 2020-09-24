@@ -3,7 +3,7 @@ import styled from '@emotion/styled'
 import { Collapse } from 'react-collapse'
 import ReactMarkdown from 'react-markdown'
 
-interface Props {
+interface AccordionProps {
   item: {
     title: string
     description: string
@@ -63,7 +63,7 @@ const SectionAccordionItem = styled.section`
   }
 `
 
-const AccordionItem = (props: Props) => {
+const AccordionItem = (props: AccordionProps) => {
   const [isOpen, setIsOpen] = useState<boolean>(false)
 
   return (

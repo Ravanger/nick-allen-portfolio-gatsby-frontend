@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import { Link } from 'gatsby'
 import { motion, AnimatePresence } from 'framer-motion'
 
 import Header from '@components/Header'
+import SpinningMainMenu from './SpinningMainMenu'
 
 const duration = 1
 
@@ -21,32 +21,11 @@ const MainContent = styled.main`
   > div {
     display: flex;
     min-width: 100%;
+    height: calc(100vh - 2rem);
     position: absolute;
+    align-items: center;
+    justify-content: center;
   }
-`
-
-const SpanRotated = styled.span`
-  display: block;
-  font-size: 2rem;
-  background-color: var(--main-bg-color);
-  position: absolute;
-  font-family: Colus, serif;
-  padding: 0 0.5em;
-  z-index: 9;
-`
-
-const SpanLeft = styled(SpanRotated)`
-  transform: rotate(90deg) translate(-25%, 0);
-  transform-origin: 1rem 0;
-  left: 2rem;
-  top: calc(50% + 2rem);
-`
-
-const SpanRight = styled(SpanRotated)`
-  transform: rotate(-90deg) translate(25%, 0);
-  transform-origin: right;
-  right: 2rem;
-  top: 50%;
 `
 
 const variants = {
@@ -76,12 +55,7 @@ const Layout: React.FC = props => {
   return (
     <>
       <Header />
-      <SpanLeft>
-        <Link to="/work">Work</Link>
-      </SpanLeft>
-      <SpanRight>
-        <Link to="/about">About</Link>
-      </SpanRight>
+      <SpinningMainMenu />
       <MainContent>
         <AnimatePresence initial={false}>
           <motion.div

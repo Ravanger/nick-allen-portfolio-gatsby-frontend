@@ -8,7 +8,7 @@ import AccordionItem from '@components/AccordionItem'
 const DivProjects = styled.div`
   text-align: left;
   margin: auto;
-  margin-left: 4rem;
+  margin-left: 6rem;
 `
 
 const WorkPage: React.FC = () => {

@@ -3,7 +3,7 @@ import styled from '@emotion/styled'
 import { motion, AnimatePresence } from 'framer-motion'
 
 import Header from '@components/Header'
-import SpinningMainMenu from './SpinningMainMenu'
+import SpinningMainMenu from '@components/SpinningMainMenu'
 
 const duration = 1
 

@@ -5,12 +5,6 @@ import Socials_Icons from './Socials_Icons'
 const DivContact = styled.div`
   margin: auto;
 
-  > h2 {
-    font-family: Colus, serif;
-    font-size: 2rem;
-    margin-bottom: 1rem;
-  }
-
   > form {
     display: flex;
     flex-direction: column;
@@ -59,7 +53,6 @@ const DivContact = styled.div`
 const Contact: React.FC = () => {
   return (
     <DivContact>
-      <h2>Contact</h2>
       <form
         name="contact"
         method="POST"

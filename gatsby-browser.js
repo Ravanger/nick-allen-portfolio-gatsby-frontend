@@ -14,7 +14,7 @@ export const shouldUpdateScroll = ({
   routerProps: { location },
   getSavedScrollPosition,
 }) => {
-  if (location.action === 'PUSH') {
+  if (location && location.action === 'PUSH') {
     window.setTimeout(() => window.scrollTo(0, 0), transitionDelay)
   } else {
     const savedPosition = getSavedScrollPosition(location)
@@ -24,4 +24,10 @@ export const shouldUpdateScroll = ({
     )
   }
   return false
+}
+
+export const onRouteUpdate = () => {
+  window.locations = window.locations || [document.referrer]
+  window.locations.push(window.location.pathname)
+  window.previousPath = window.locations[window.locations.length - 1]
 }

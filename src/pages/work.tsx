@@ -1,14 +1,21 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import styled from '@emotion/styled'
+import { AnimateSharedLayout, motion } from 'framer-motion'
 
 import SEO from '@components/SEO'
 import AccordionItem from '@components/AccordionItem'
 
-const DivProjects = styled.div`
+const DivProjects = styled(motion.div)`
+  overflow-x: hidden;
+  overflow-y: auto;
+  max-height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
   text-align: left;
   margin: auto;
-  margin-left: 6rem;
+  margin-left: 4rem;
 `
 
 const WorkPage: React.FC = () => {
@@ -27,18 +34,20 @@ const WorkPage: React.FC = () => {
   return (
     <>
       <SEO title="Work" />
-      <DivProjects>
-        {allStrapiUxProjects.nodes ? (
-          allStrapiUxProjects.nodes.map((item: any) => (
-            <AccordionItem
-              item={{ title: item.Title, description: item.Description }}
-              key={item.strapiId}
-            />
-          ))
-        ) : (
-          <p>Nothing to see here</p>
-        )}
-      </DivProjects>
+      <AnimateSharedLayout>
+        <DivProjects layout>
+          {allStrapiUxProjects.nodes ? (
+            allStrapiUxProjects.nodes.map((item: any) => (
+              <AccordionItem
+                item={{ title: item.Title, description: item.Description }}
+                key={item.strapiId}
+              />
+            ))
+          ) : (
+            <p>Nothing to see here</p>
+          )}
+        </DivProjects>
+      </AnimateSharedLayout>
     </>
   )
 }

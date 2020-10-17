@@ -26,8 +26,9 @@ const MainContent = styled.main`
 
   > div {
     display: flex;
+    overflow: hidden;
     min-width: 100%;
-    height: calc(100vh - 2rem);
+    height: calc(100vh - 9rem);
     position: absolute;
     align-items: center;
     justify-content: center;

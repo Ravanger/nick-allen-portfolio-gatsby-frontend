@@ -10,9 +10,7 @@ interface AccordionProps {
   }
 }
 
-const SectionAccordionItem = styled.section`
-  margin-bottom: 1rem;
-
+const SectionAccordionItem = styled(motion.section)`
   p,
   ul,
   ol {
@@ -21,12 +19,18 @@ const SectionAccordionItem = styled.section`
 
   > button {
     font-family: Colus, serif;
+    background: var(--main-bg-color);
     font-size: 3rem;
-    margin-bottom: 1rem;
-    background: none;
     border: none;
-    padding: 0;
+    padding: 0.5em;
     cursor: pointer;
+    position: sticky;
+    top: 0;
+  }
+
+  > div {
+    margin: auto;
+    max-width: 28rem;
   }
 
   p {
@@ -61,35 +65,36 @@ const SectionAccordionItem = styled.section`
   img {
     width: 100%;
   }
-
-  .ReactCollapse--collapse {
-    transition: height 500ms;
-  }
 `
 
 const AccordionItem = (props: AccordionProps) => {
   const [isOpen, setIsOpen] = useState<boolean>(false)
 
   return (
-    <SectionAccordionItem>
-      <button onClick={() => setIsOpen(!isOpen)}>
-        <motion.span initial={false} animate={{ rotate: isOpen ? 90 : 0 }}>
+    <SectionAccordionItem layout>
+      <motion.button layout onClick={() => setIsOpen(!isOpen)}>
+        <motion.span
+          layout
+          initial={false}
+          animate={{ rotate: isOpen ? 90 : 0 }}
+        >
           ▸
         </motion.span>
         {props.item.title}
-      </button>
+      </motion.button>
 
-      <AnimatePresence initial={false}>
+      <AnimatePresence>
         {isOpen && (
           <motion.div
+            layout
             initial="collapsed"
             animate="open"
             exit="collapsed"
             variants={{
-              open: { opacity: 1, height: 'auto' },
-              collapsed: { opacity: 0, height: 0 },
+              open: { opacity: 1 },
+              collapsed: { opacity: 0 },
             }}
-            transition={{ duration: 0.5, ease: [0, 0.62, 0.23, 1] }}
+            transition={{ duration: 0.5 }}
           >
             <ReactMarkdown>{props.item.description}</ReactMarkdown>
           </motion.div>
